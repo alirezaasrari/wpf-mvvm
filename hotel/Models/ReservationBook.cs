@@ -14,7 +14,7 @@ namespace hotel.Models
         {
             _reservations = new List<Reservation>();
         }
-        public IEnumerable<Reservation> GetReservationsForUser(string username)
+        public IEnumerable<Reservation> GetAllReservations()
         {
             return _reservations;
         }

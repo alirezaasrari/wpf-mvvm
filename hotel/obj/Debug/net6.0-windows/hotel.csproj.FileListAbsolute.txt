@@ -45,3 +45,4 @@ E:\aghili\MVVM_WPF\hotel\hotel\obj\Debug\net6.0-windows\refint\hotel.dll
 E:\aghili\MVVM_WPF\hotel\hotel\obj\Debug\net6.0-windows\hotel.pdb
 E:\aghili\MVVM_WPF\hotel\hotel\obj\Debug\net6.0-windows\hotel.genruntimeconfig.cache
 E:\aghili\MVVM_WPF\hotel\hotel\obj\Debug\net6.0-windows\ref\hotel.dll
+E:\aghili\MVVM_WPF\hotel\hotel\obj\Debug\net6.0-windows\App.baml

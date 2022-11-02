@@ -39,7 +39,7 @@ namespace hotel
             }
 
 
-            IEnumerable<Reservation> reservation = hotel.GetReservationsForUser("azadi");
+     //       IEnumerable<Reservation> reservation = hotel.GetAllReservations("azadi");
 
             base.OnStartup(e);
         }
