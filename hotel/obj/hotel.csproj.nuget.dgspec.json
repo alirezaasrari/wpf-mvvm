@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\aghili\\MVVM_WPF\\hotel\\hotel\\hotel.csproj": {}
+    "E:\\laptop\\aghili\\hotel\\master\\hotel\\hotel.csproj": {}
   },
   "projects": {
-    "E:\\aghili\\MVVM_WPF\\hotel\\hotel\\hotel.csproj": {
+    "E:\\laptop\\aghili\\hotel\\master\\hotel\\hotel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\aghili\\MVVM_WPF\\hotel\\hotel\\hotel.csproj",
+        "projectUniqueName": "E:\\laptop\\aghili\\hotel\\master\\hotel\\hotel.csproj",
         "projectName": "hotel",
-        "projectPath": "E:\\aghili\\MVVM_WPF\\hotel\\hotel\\hotel.csproj",
-        "packagesPath": "C:\\Users\\saeed\\.nuget\\packages\\",
-        "outputPath": "E:\\aghili\\MVVM_WPF\\hotel\\hotel\\obj\\",
+        "projectPath": "E:\\laptop\\aghili\\hotel\\master\\hotel\\hotel.csproj",
+        "packagesPath": "C:\\Users\\a.asrari\\.nuget\\packages\\",
+        "outputPath": "E:\\laptop\\aghili\\hotel\\master\\hotel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\saeed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a.asrari\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
