@@ -1,4 +1,5 @@
-﻿using hotel.Stores;
+﻿using hotel.Services;
+using hotel.Stores;
 using hotel.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,22 @@ namespace hotel.Commands
 {
     public class NavigateCommand : CommandBase
     {
-        private readonly NavigationStore _navigationStore;
-        private readonly Func<ViewModelBase> _createViewModel;
-        public NavigateCommand(NavigationStore navigationStore, Func<ViewModelBase> createViewModel)  
+        private readonly NavigationService _navigationService;
+        private System.Windows.Navigation.NavigationService makeReservationNavigationService;
+
+        public NavigateCommand(NavigationService navigationService)
         {
-            _navigationStore = navigationStore;
-            _createViewModel = createViewModel;
+            _navigationService = navigationService;
+        }
+
+        public NavigateCommand(System.Windows.Navigation.NavigationService makeReservationNavigationService)
+        {
+            this.makeReservationNavigationService = makeReservationNavigationService;
         }
 
         public override void Execute(object? parameter)
         {
-            _navigationStore.CurrentViewModel = _createViewModel();
+            _navigationService.Navigate();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace hotel.ViewModels
 {
@@ -54,6 +55,9 @@ namespace hotel.ViewModels
         }
 
         private DateTime _endTime = new DateTime(2021, 1, 8);
+        private Hotel hotel;
+        private NavigationService navigationService;
+
         public DateTime EndTime
         {
             get { return _endTime; }
@@ -67,10 +71,16 @@ namespace hotel.ViewModels
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public MakeReservationViewModel(Hotel hotel, Stores.NavigationStore navigationStore, Func<ReservationListingViewModel> createReservationViewModel)
+        public MakeReservationViewModel(Hotel hotel, Stores.NavigationStore navigationStore, Func<ReservationListingViewModel> createReservationViewModel, Services.NavigationService reservationViewNavigationService)
         {
-            SubmitCommand = new MakeReservationCommand(this,hotel);
-            CancelCommand = new NavigateCommand(navigationStore, createReservationViewModel);
+            SubmitCommand = new MakeReservationCommand(this,hotel, reservationViewNavigationService);
+            CancelCommand = new NavigateCommand(reservationViewNavigationService);
+        }
+
+        public MakeReservationViewModel(Hotel hotel, NavigationService navigationService)
+        {
+            this.hotel = hotel;
+            this.navigationService = navigationService;
         }
     }
 }

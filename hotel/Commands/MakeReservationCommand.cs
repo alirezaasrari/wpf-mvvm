@@ -1,5 +1,6 @@
-﻿using hotel.Exceptions;
+﻿ using hotel.Exceptions;
 using hotel.Models;
+using hotel.Services;
 using hotel.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,12 @@ namespace hotel.Commands
     {
         private readonly MakeReservationViewModel _makeReservationViewModel;
         private readonly Hotel _hotel;
+        private readonly NavigationService reservationViewNavigationService;
 
-        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel, Hotel hotel)
+        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel, Hotel hotel, NavigationService reservationViewNavigationService)
         {
             _hotel = hotel;
+            this.reservationViewNavigationService = reservationViewNavigationService;
             _makeReservationViewModel = makeReservationViewModel;
 
             _makeReservationViewModel.PropertyChanged += onViewModelPropertyChanged;
@@ -30,7 +33,7 @@ namespace hotel.Commands
                 e.PropertyName == nameof(MakeReservationViewModel.FloorNumber))
             {
                 OnCanExecutedChanged(); 
-            }
+            } 
         }
 
         public override bool CanExecute(object? parameter)
@@ -50,6 +53,8 @@ namespace hotel.Commands
             {
                 _hotel.MakeReservation(reservation);
                 MessageBox.Show("successfully reserved room", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                reservationViewNavigationService.Navigate();
             }
             catch (ReservationConflictException)
             {
