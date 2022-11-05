@@ -16,11 +16,17 @@ namespace hotel
     /// </summary>
     public partial class App : Application
     {
+        private readonly Hotel _hotel;
+        public App()
+        {
+            _hotel = new Hotel("pars");
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_hotel)
             };
 
             MainWindow.Show();

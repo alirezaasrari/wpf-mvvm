@@ -1,4 +1,6 @@
-﻿using System;
+﻿using hotel.Commands;
+using hotel.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +42,7 @@ namespace hotel.ViewModels
             }
         }
 
-        private DateTime _startTime;
+        private DateTime _startTime = new DateTime(2021,1,1);
         public DateTime StartTime
         {
             get { return _startTime; }
@@ -51,7 +53,7 @@ namespace hotel.ViewModels
             }
         }
 
-        private DateTime _endTime;
+        private DateTime _endTime = new DateTime(2021, 1, 8);
         public DateTime EndTime
         {
             get { return _endTime; }
@@ -65,9 +67,10 @@ namespace hotel.ViewModels
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-      //  public MakeReservationViewModel()
-  //        {
-  //
-    //    }
+        public MakeReservationViewModel(Hotel hotel)
+        {
+            SubmitCommand = new MakeReservationCommand(this,hotel);
+            CancelCommand = new CancelMakeReservationCommand();
+        }
     }
 }

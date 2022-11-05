@@ -19,6 +19,8 @@ namespace hotel.ViewModels
         {
             _reservations = new ObservableCollection<ReservationViewModel>();
 
+            MakeReservationCommand = new NavigationCommands
+
             _reservations.Add(
                 new ReservationViewModel(
                     new Reservation(
